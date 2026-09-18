@@ -13,7 +13,11 @@ class EventoController extends Controller
     {
         // $eventos = Evento::all();
 
-        $eventos = Evento::where('evento_id', eventos()->getId())->get();
+        // $eventos = Evento::where('evento_id', eventos()->getId())->get();
+
+
+        $eventos = Evento::with('user')->get(); // Apenas 2 queries no total
+
 
         // return view('eventos.index', compact('eventos'));
 
