@@ -34,7 +34,7 @@
             <h4 class="fw-bold m-0">📋 Perguntas do Evento</h4>
             <span class="text-secondary small">Total no Banco: {{ $evento->perguntas->count() }}</span>
         </div>
-        ({{ $perguntas->links() }})
+
         @forelse($perguntas as $pergunta)
             <div class="card mb-3 shadow-sm border-start border-4 border-primary">
                 <div class="card-body">

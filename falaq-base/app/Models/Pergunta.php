@@ -10,16 +10,15 @@ class Pergunta extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['evento_id', 'texto', 'status'];
+    protected $fillable = ['evento_id', 'texto', 'status', 'user_id', 'is_public'];
 
     public function evento(): BelongsTo
     {
         return $this->belongsTo(Evento::class);
     }
 
-    public function User(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }
-
